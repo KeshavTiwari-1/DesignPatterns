@@ -11,6 +11,11 @@ public class EntryGateImpl implements EntryGate{
     private VehicleFactory vehicleFactory;
     private ParkingSpotManager parkingSpotManager;
 
+    public EntryGateImpl(VehicleFactory vehicleFactory, ParkingSpotManager parkingSpotManager) {
+        this.vehicleFactory = vehicleFactory;
+        this.parkingSpotManager = parkingSpotManager;
+    }
+
     @Override
     public Vehicle registerVehicle(String vehicleId, String vehicleType) {
         return vehicleFactory.generateVehicle(vehicleId, vehicleType);

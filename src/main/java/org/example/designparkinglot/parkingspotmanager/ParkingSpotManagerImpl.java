@@ -12,6 +12,11 @@ public class ParkingSpotManagerImpl implements ParkingSpotManager{
     private List<ParkingSpot> parkingSpotList;
     private ParkingAllotmentStrategy parkingAllotmentStrategy;
 
+    public ParkingSpotManagerImpl(List<ParkingSpot> parkingSpotList, ParkingAllotmentStrategy parkingAllotmentStrategy) {
+        this.parkingSpotList = parkingSpotList;
+        this.parkingAllotmentStrategy = parkingAllotmentStrategy;
+    }
+
     @Override
     public String getType() {
         return TYPE;

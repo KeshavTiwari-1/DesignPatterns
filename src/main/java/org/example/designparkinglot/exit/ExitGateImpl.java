@@ -2,22 +2,31 @@ package org.example.designparkinglot.exit;
 
 import org.example.designparkinglot.parkingspot.ParkingSpot;
 import org.example.designparkinglot.parkingspotmanager.ParkingSpotManager;
+import org.example.designparkinglot.payment.PaymentCalculationService;
+import org.example.designparkinglot.payment.PaymentCollectService;
 import org.example.designparkinglot.payment.PaymentReceipt;
 import org.example.designparkinglot.ticket.Ticket;
 
 public class ExitGateImpl implements ExitGate{
 
     private ParkingSpotManager parkingSpotManager;
-    private
+    private PaymentCalculationService paymentCalculationService;
+    private PaymentCollectService paymentCollectService;
+
+    public ExitGateImpl(ParkingSpotManager parkingSpotManager, PaymentCalculationService paymentCalculationService, PaymentCollectService paymentCollectService) {
+        this.parkingSpotManager = parkingSpotManager;
+        this.paymentCalculationService = paymentCalculationService;
+        this.paymentCollectService = paymentCollectService;
+    }
 
     @Override
     public Integer calculatePayment(Ticket ticket) {
-        return 0;
+        return paymentCalculationService.calculatePayment(ticket);
     }
 
     @Override
     public PaymentReceipt collectPayment(Integer amount) {
-        return null;
+        return paymentCollectService.collectPayment(amount);
     }
 
     @Override

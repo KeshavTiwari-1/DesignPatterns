@@ -5,6 +5,11 @@ import org.example.designparkinglot.ticket.Ticket;
 import org.example.designparkinglot.vehicle.Vehicle;
 
 public class EntryGateManager {
+
+    public EntryGateManager(EntryGate entryGate) {
+        this.entryGate = entryGate;
+    }
+
     private EntryGate entryGate;
 
     public EntryPass handleRequest(String vehicleId, String vehicleType){

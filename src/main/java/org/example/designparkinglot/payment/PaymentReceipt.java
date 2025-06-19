@@ -1,10 +1,19 @@
 package org.example.designparkinglot.payment;
 
+import java.util.UUID;
+
 public class PaymentReceipt {
     private String id;
-    private String amount;
+    private Integer amount;
     private String transactionId;
     private String mode;
+
+    public PaymentReceipt(Integer amount, String mode) {
+        id = UUID.randomUUID().toString();
+        this.amount = amount;
+        transactionId = UUID.randomUUID().toString();
+        this.mode = mode;
+    }
 
     public String getId() {
         return id;
@@ -14,11 +23,11 @@ public class PaymentReceipt {
         id = java.util.UUID.randomUUID().toString();
     }
 
-    public String getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 

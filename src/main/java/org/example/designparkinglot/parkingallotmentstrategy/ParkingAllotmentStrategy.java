@@ -9,7 +9,7 @@ import java.util.Optional;
 public class ParkingAllotmentStrategy {
     public ParkingSpot assignParkingSpot(List<ParkingSpot> parkingSpots){
         Optional<ParkingSpot> opt = parkingSpots.stream().filter(a -> !a.isOccupied()).findFirst();
-        if(opt.isPresent()) throw new RuntimeException("No Parking Spot Available");
+        if(!opt.isPresent()) throw new RuntimeException("No Parking Spot Available");
         return opt.get();
     }
 }

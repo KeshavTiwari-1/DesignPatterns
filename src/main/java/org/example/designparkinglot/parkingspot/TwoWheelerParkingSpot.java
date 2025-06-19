@@ -2,12 +2,19 @@ package org.example.designparkinglot.parkingspot;
 
 import org.example.designparkinglot.vehicle.Vehicle;
 
+import java.util.UUID;
+
 public class TwoWheelerParkingSpot implements ParkingSpot{
 
     private String id;
     private static final String type = "TWO_WHEELER_PARKING_SPOT";
     private Boolean isOccupied;
     private Vehicle vehicle;
+
+    public TwoWheelerParkingSpot(){
+        id  = UUID.randomUUID().toString();
+        isOccupied = false;
+    }
 
     @Override
     public String getId() {

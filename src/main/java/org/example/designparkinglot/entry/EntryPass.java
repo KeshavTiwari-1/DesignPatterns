@@ -9,6 +9,30 @@ public class EntryPass {
     private Ticket ticket;
     private ParkingSpot parkingSpot;
 
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
+
+    public ParkingSpot getParkingSpot() {
+        return parkingSpot;
+    }
+
+    public void setParkingSpot(ParkingSpot parkingSpot) {
+        this.parkingSpot = parkingSpot;
+    }
+
     public EntryPass(Vehicle vehicle, Ticket ticket, ParkingSpot parkingSpot) {
         this.vehicle = vehicle;
         this.ticket = ticket;
